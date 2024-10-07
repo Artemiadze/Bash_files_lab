@@ -8,6 +8,15 @@ read percentage
 echo -e "\n ваша директория содержит файлы и папки:"
 ls $path_to
 
+
+# Создание папки фиксированного размера
+# dd if=/dev/zero of=~/lab_bash/myfixedSizeFolder.img bs=1M count=100
+# mkfs.ext4 ~/lab_bash/myfixedSizeFolder.img
+# cd lab_bash
+# sudo mount -o loop myfixedSizeFolder.img mountpoint 
+# sudo umount /home/lab_bash/mountpoint - размонтировка папки
+
+
 # Получаем размер целевой папки и родительской папки
 TARGET_SIZE=$(du -sb "$path_to" | cut -f1)
 PARENT_DIR=$(dirname "$path_to")
